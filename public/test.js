@@ -48,13 +48,15 @@ class Img extends React.Component {
 
 class BlogItem extends React.Component {
   render() {
-      return this.props.BlogItems.map(function(blog) {
-               return
-               <div>
-                 <TextBox children={blog.txt1} />
-                 <Img attrImg={blog.img} />
-               </div>
-             })
+      return  <ul> 
+                {this.props.BlogItems.map((blog) => ( 
+                  <li> 
+                    <TextBox children={blog.txt1} /> 
+                    <Img attrImg={blog.img} /> 
+                  </li>
+                ))
+                }
+              </ul>
 
     // return <div>
     //          <TextBox children={this.props.BlogItems.txt1} />
@@ -63,6 +65,28 @@ class BlogItem extends React.Component {
     //        </div>
   }
 };
+
+
+class BlogList extends React.Component {
+  render() {
+      return  <ul> 
+                {this.props.BlogItems.map((blog) => ( 
+                  <li> 
+                    <TextBox children={blog.txt1} /> 
+                    <Img attrImg={blog.img} /> 
+                  </li>
+                ))
+                }
+              </ul>
+
+    // return <div>
+    //          <TextBox children={this.props.BlogItems.txt1} />
+    //          <br/>
+    //          <Img attrImg={this.props.BlogItems.img} />
+    //        </div>
+  }
+};
+
 
 
 // const attrImg = {src:"card.png", width:"100", height:"100", alt:"image not found"};
