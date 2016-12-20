@@ -38,45 +38,31 @@ class TextBox extends React.Component {
   render() {
     return <span >{this.props.children}</span>
   }
-}
+};
 
 class Img extends React.Component {
   render() {
     return React.DOM.img(this.props.attrImg);
   }
-}
+};
 
 class BlogItem extends React.Component {
-  constructor(props) {
-    super(props);
-
-      console.log( this.props.BlogItems.map(function(blog) {
-               return blog;
-//               <div>
-//                 <TextBox children={blog.txt1} />
-//                 <Img attrImg={blog.img} />
-//               </div>
-             }));
-
-         // this.props.BlogItems.forEach(function(blog) {
-         //    console.log(blog);
-         // });
-  }
   render() {
       return this.props.BlogItems.map(function(blog) {
                return
                <div>
                  <TextBox children={blog.txt1} />
                  <Img attrImg={blog.img} />
-               </div> ;
-             });
+               </div>
+             })
 
     // return <div>
-    //          <TextBox children={this.props.BlogItems.txt1} Img attrImg={this.props.BlogItems.img} />
+    //          <TextBox children={this.props.BlogItems.txt1} />
+    //          <br/>
     //          <Img attrImg={this.props.BlogItems.img} />
     //        </div>
   }
-}
+};
 
 
 // const attrImg = {src:"card.png", width:"100", height:"100", alt:"image not found"};
@@ -92,13 +78,16 @@ class BlogItem extends React.Component {
 // );
 
 
-
 const BlogItems = [{img: {src:"card.png", width:"100", height:"100", alt:"image not found"},
                    txt: {type: "text", size: "20"}, txt1: "eee1"},
                     {img: {src:"card.png", width:"100", height:"50", alt:"image not found"},
                    txt: {type: "text", size: "20"}, txt1: "eee2"},
                     {img: {src:"card.png", width:"100", height:"30", alt:"image not found"},
                    txt: {type: "text", size: "20"}, txt1: "eee3"}];
+
+// const BlogItems = {img: {src:"card.png", width:"100", height:"100", alt:"image not found"},
+//                    txt: {type: "text", size: "20"}, txt1: "eee1"}
+
 
 ReactDOM.render(
   React.createElement(BlogItem, {BlogItems}, null),
